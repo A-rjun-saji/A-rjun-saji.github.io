@@ -12,8 +12,9 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            background: linear-gradient(135deg, #2a5298, #1e3c72);
             color: #fff;
+            scroll-behavior: smooth;
         }
 
         /* Header */
@@ -31,6 +32,11 @@
         header h1 {
             margin: 0;
             font-size: 3em;
+        }
+
+        header p {
+            margin: 10px 0;
+            font-size: 1.2em;
         }
 
         nav ul {
@@ -59,14 +65,16 @@
         section {
             padding: 60px 20px;
             margin: 10px 0;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 8px;
+            animation: fadeInUp 1s ease-out;
         }
 
         section h2 {
             font-size: 2.5em;
             margin-bottom: 20px;
             text-align: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
         /* Skills */
@@ -85,9 +93,10 @@
         /* Projects */
         .project {
             margin-bottom: 30px;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.6);
             padding: 20px;
             border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         .project h3 {
@@ -103,6 +112,7 @@
 
         .project a:hover {
             text-decoration: underline;
+            color: #e67e22;
         }
 
         /* Footer */
@@ -143,9 +153,33 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            nav ul {
+                text-align: center;
+            }
+
             nav ul li {
                 display: block;
                 margin: 10px 0;
+            }
+
+            nav {
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background: rgba(0, 0, 0, 0.7);
+                padding: 10px;
+                border-radius: 8px;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
@@ -219,6 +253,17 @@
                 <p>A PowerShell script that automates security checks on Windows machines.</p>
                 <a href="https://github.com/A-rjun-saji/windows-security-health-check" target="_blank">View on GitHub</a>
             </div>
+            <!-- Add more projects here -->
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2>What Others Say</h2>
+            <blockquote>
+                <p>"Arjun's skills and dedication are exceptional. His work in cybersecurity is top-notch."</p>
+                <footer>— John Doe, Cybersecurity Expert</footer>
+            </blockquote>
         </div>
     </section>
 
@@ -226,6 +271,7 @@
         <div class="container">
             <h2>Reach Out to Me</h2>
             <p>Email: <a href="mailto:arjunsaji618@gmail.com">arjunsaji618@gmail.com</a></p>
+            <p>Follow me on <a href="https://linkedin.com/in/arjun-saji" target="_blank">LinkedIn</a></p>
         </div>
     </footer>
 
