@@ -200,32 +200,7 @@
             padding-bottom: 5px;
         }
 
-        #about ul {
-            list-style: disc;
-            padding-left: 20px;
-        }
-
-        #about ul li {
-            margin: 10px 0;
-        }
-
-        /* Common Section Styles */
-        .section-content {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-
-        .section-content h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
-            text-align: center;
-        }
-
+        /* Education and Certifications */
         .section-content .card {
             background: #f9f9f9;
             padding: 20px;
@@ -265,6 +240,46 @@
 
         footer a:hover {
             text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav ul {
+                flex-direction: column;
+                display: none;
+            }
+
+            .nav ul.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .section-content {
+                padding: 15px;
+            }
+
+            #home h1 {
+                font-size: 2rem;
+            }
+
+            #home p {
+                font-size: 1rem;
+            }
+
+            #about .container {
+                flex-direction: column;
+            }
+
+            .section-content .card h3 {
+                font-size: 1.2rem;
+            }
+
+            .section-content .card p {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -422,23 +437,21 @@
     </section>
 
     <footer>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/[LinkedIn-ID]" target="_blank">[LinkedIn-ID]</a></p>
-        <p>GitHub: <a href="https://github.com/A-rjun-saji" target="_blank">A-rjun-saji</a></p>
+        <p>Connect with me on <a href="https://www.linkedin.com/in/your-linkedin-id" target="_blank">LinkedIn</a> and check out my <a href="https://github.com/A-rjun-saji" target="_blank">GitHub</a></p>
     </footer>
-    
+
     <script>
-        // Preloader removal
-        window.addEventListener('load', () => {
-            document.getElementById('preloader').style.display = 'none';
+        // JavaScript for menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var navMenu = document.querySelector('.nav ul');
+            navMenu.classList.toggle('active');
         });
 
-        // Menu toggle for mobile view
-        const menuToggle = document.getElementById('menu-toggle');
-        const nav = document.querySelector('.nav');
-        
-        menuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
+        // Hide preloader once content is loaded
+        window.addEventListener('load', function() {
+            document.getElementById('preloader').style.display = 'none';
         });
     </script>
+
 </body>
 </html>
