@@ -12,16 +12,14 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #2a5298, #1e3c72);
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: #fff;
-            scroll-behavior: smooth;
         }
 
-        /* Header */
         header {
             background: rgba(0, 0, 0, 0.7);
             color: #fff;
-            padding: 20px 0;
+            padding: 20px;
             text-align: center;
             position: sticky;
             top: 0;
@@ -31,12 +29,7 @@
 
         header h1 {
             margin: 0;
-            font-size: 3em;
-        }
-
-        header p {
-            margin: 10px 0;
-            font-size: 1.2em;
+            font-size: 2.5em;
         }
 
         nav ul {
@@ -65,43 +58,38 @@
         section {
             padding: 60px 20px;
             margin: 10px 0;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 8px;
-            animation: fadeInUp 1s ease-out;
         }
 
         section h2 {
-            font-size: 2.5em;
+            font-size: 2em;
             margin-bottom: 20px;
             text-align: center;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
-        /* Skills */
-        #skills ul {
+        #skills ul, #education ul, #experience ul, #certifications ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
             text-align: center;
         }
 
-        #skills ul li {
+        #skills ul li, #education ul li, #experience ul li, #certifications ul li {
             font-size: 1.2em;
             margin: 10px 0;
         }
 
-        /* Projects */
         .project {
             margin-bottom: 30px;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.3);
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         .project h3 {
             margin: 0;
-            font-size: 1.8em;
+            font-size: 1.5em;
         }
 
         .project a {
@@ -112,15 +100,13 @@
 
         .project a:hover {
             text-decoration: underline;
-            color: #e67e22;
         }
 
-        /* Footer */
         footer {
             background: rgba(0, 0, 0, 0.7);
             color: #fff;
             text-align: center;
-            padding: 20px 0;
+            padding: 20px;
         }
 
         footer a {
@@ -132,7 +118,6 @@
             text-decoration: underline;
         }
 
-        /* Back to Top Button */
         #backToTop {
             position: fixed;
             bottom: 30px;
@@ -153,8 +138,8 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            nav ul {
-                text-align: center;
+            header h1 {
+                font-size: 2em;
             }
 
             nav ul li {
@@ -162,124 +147,99 @@
                 margin: 10px 0;
             }
 
-            nav {
-                position: absolute;
-                top: 60px;
-                right: 20px;
-                background: rgba(0, 0, 0, 0.7);
-                padding: 10px;
-                border-radius: 8px;
+            section {
+                padding: 40px 20px;
             }
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5em;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            section h2 {
+                font-size: 1.5em;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Arjun Saji</h1>
-            <p>Cybersecurity Enthusiast | MSc Cyber Security | Ethical Hacker</p>
-            <nav>
-                <ul>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Arjun Saji</h1>
+        <p>Cybersecurity Enthusiast | MSc Cyber Security | Ethical Hacker</p>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>Hi, I'm Arjun. I have a BSc in Forensic Science, an MSc in Cyber Security, and certifications in Ethical Hacking. I’m passionate about cybersecurity and excel at solving complex problems. Quick to learn and apply new knowledge, I’m dedicated to enhancing digital security.</p>
-        </div>
+        <h2>About Me</h2>
+        <p>Hi, I'm Arjun. I have a BSc in Forensic Science, an MSc in Cyber Security, and certifications in Ethical Hacking. I’m passionate about cybersecurity and excel at solving complex problems. Quick to learn and apply new knowledge, I’m dedicated to enhancing digital security.</p>
     </section>
 
     <section id="skills">
-        <div class="container">
-            <h2>My Background</h2>
-            <ul>
-                <li>BSc Forensic Science from the Aditya University (2019)</li>
-                <li>MSc Cyber Security from the Aditya University (2023)</li>
-            </ul>
+        <h2>My Background</h2>
+        <h3>Education</h3>
+        <ul>
+            <li>BSc Forensic Science from Aditya University (2019)</li>
+            <li>MSc Cyber Security from Aditya University (2023)</li>
+        </ul>
 
-            <h2>Work Experience</h2>
-            <ul>
-                <li>Cyber Security Intern at Trinity Technologies (3 months)</li>
-            </ul>
+        <h3>Work Experience</h3>
+        <ul>
+            <li>Cyber Security Intern at Trinity Technologies (3 months)</li>
+        </ul>
 
-            <h2>Certifications</h2>
-            <ul>
-                <li>Cyber Forensics</li>
-                <li>Cyber Security Internship (Trinity)</li>
-                <li>Ethical Hacking and Cyber Security</li>
-                <li>Introduction to Cyber Security (Cisco)</li>
-                <li>Networking Basics (Cisco)</li>
-                <li>Endpoint Security (Cisco)</li>
-                <li>Networking Devices and Initial Configuration (Cisco)</li>
-                <li>Network Defense (Cisco)</li>
-                <li>Junior Cyber Security Analyst Career Path</li>
-                <li>Cyber Threat Management</li>
-            </ul>
+        <h3>Certifications</h3>
+        <ul>
+            <li>Cyber Forensics</li>
+            <li>Cyber Security Internship (Trinity)</li>
+            <li>Ethical Hacking and Cyber Security</li>
+            <li>Introduction to Cyber Security (Cisco)</li>
+            <li>Networking Basics (Cisco)</li>
+            <li>Endpoint Security (Cisco)</li>
+            <li>Networking Devices and Initial Configuration (Cisco)</li>
+            <li>Network Defense (Cisco)</li>
+            <li>Junior Cyber Security Analyst Career Path</li>
+            <li>Cyber Threat Management</li>
+        </ul>
 
-            <h2>Skills & Tools</h2>
-            <ul>
-                <li>Penetration Testing</li>
-                <li>Scripting (PowerShell, Bash, Python)</li>
-                <li>Security Tools (Nmap, Wireshark, Metasploit)</li>
-                <li>Incident Response</li>
-                <li>Vulnerability Assessment</li>
-            </ul>
-        </div>
+        <h3>Skills & Tools</h3>
+        <ul>
+            <li>Penetration Testing</li>
+            <li>Scripting (PowerShell, Bash, Python)</li>
+            <li>Security Tools (Nmap, Wireshark, Metasploit)</li>
+            <li>Incident Response</li>
+            <li>Vulnerability Assessment</li>
+        </ul>
     </section>
 
     <section id="projects">
-        <div class="container">
-            <h2>My Projects</h2>
-            <div class="project">
-                <h3>Windows Security Health Check Script</h3>
-                <p>A PowerShell script that automates security checks on Windows machines.</p>
-                <a href="https://github.com/A-rjun-saji/windows-security-health-check" target="_blank">View on GitHub</a>
-            </div>
-            <!-- Add more projects here -->
-        </div>
-    </section>
-
-    <section id="testimonials">
-        <div class="container">
-            <h2>What Others Say</h2>
-            <blockquote>
-                <p>"Arjun's skills and dedication are exceptional. His work in cybersecurity is top-notch."</p>
-                <footer>— John Doe, Cybersecurity Expert</footer>
-            </blockquote>
+        <h2>My Projects</h2>
+        <div class="project">
+            <h3>Windows Security Health Check Script</h3>
+            <p>A PowerShell script that automates security checks on Windows machines.</p>
+            <a href="https://github.com/A-rjun-saji/windows-security-health-check" target="_blank">View on GitHub</a>
         </div>
     </section>
 
     <footer id="contact">
-        <div class="container">
-            <h2>Reach Out to Me</h2>
-            <p>Email: <a href="mailto:arjunsaji618@gmail.com">arjunsaji618@gmail.com</a></p>
-            <p>Follow me on <a href="https://linkedin.com/in/arjun-saji" target="_blank">LinkedIn</a></p>
-        </div>
+        <h2>Reach Out to Me</h2>
+        <p>Email: <a href="mailto:arjunsaji618@gmail.com">arjunsaji618@gmail.com</a></p>
     </footer>
 
-    <!-- Back to Top Button -->
     <button id="backToTop">Back to Top</button>
 
     <script>
-        // Smooth scrolling for navigation links
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -289,7 +249,6 @@
             });
         });
 
-        // Back to Top button functionality
         const backToTopButton = document.getElementById('backToTop');
 
         window.onscroll = function() {
