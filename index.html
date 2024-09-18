@@ -50,16 +50,32 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #3498db, #2ecc71);
-            background-size: 200% 200%;
-            animation: gradientAnimation 10s ease infinite;
-            color: white;
-            padding: 1rem 0;
-            position: relative;
-            text-align: center;
-        }
+       /* Define the keyframes for the gradient animation */
+@keyframes gradientAnimation {
+    0% { background: linear-gradient(135deg, #ff6f61, #d5a6f2); }
+    10% { background: linear-gradient(135deg, #f39c12, #e74c3c); }
+    20% { background: linear-gradient(135deg, #2ecc71, #3498db); }
+    30% { background: linear-gradient(135deg, #e67e22, #f1c40f); }
+    40% { background: linear-gradient(135deg, #9b59b6, #34495e); }
+    50% { background: linear-gradient(135deg, #1abc9c, #16a085); }
+    60% { background: linear-gradient(135deg, #d35400, #c0392b); }
+    70% { background: linear-gradient(135deg, #8e44ad, #2980b9); }
+    80% { background: linear-gradient(135deg, #27ae60, #2c3e50); }
+    90% { background: linear-gradient(135deg, #f39c12, #e74c3c); }
+    100% { background: linear-gradient(135deg, #ff6f61, #d5a6f2); }
+}
+
+/* Header styling */
+header {
+    background: linear-gradient(135deg, #ff6f61, #d5a6f2); /* Initial color */
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s linear infinite; /* 10s duration for full cycle */
+    color: white;
+    padding: 1rem 0;
+    position: relative;
+    text-align: center;
+}
+
 
         @keyframes gradientAnimation {
             0% { background-position: 0% 0%; }
@@ -125,29 +141,112 @@
         }
 
         /* Home Section */
-        #home {
-            background: linear-gradient(135deg, #000, #333, #000);
-            background-size: 200% 200%;
-            animation: gradientAnimationBlack 10s ease infinite;
-            text-align: center;
-            color: white;
-        }
+#home {
+    background: black; /* Black background */
+    color: white; /* Text color */
+    text-align: center;
+    padding: 100px 40px; /* Adjusted for better spacing */
+    position: relative;
+    overflow: hidden;
+    font-family: 'Lato', sans-serif;
+}
 
-        @keyframes gradientAnimationBlack {
-            0% { background-position: 0% 0%; }
-            50% { background-position: 100% 100%; }
-            100% { background-position: 0% 0%; }
-        }
+/* Main Heading */
+#home h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem; /* Larger for more impact */
+    font-weight: 800;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    color: #ffffff; /* White text */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Glowing effect */
+    letter-spacing: 2px; /* Adds sophistication */
+    animation: fadeInUp 2s ease-out; /* Smooth entrance animation */
+}
 
-        #home h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
+/* Subtext/Paragraph */
+#home p {
+    font-size: 1.2rem;
+    font-weight: 300; /* Light weight for a more elegant feel */
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6); /* Glowing effect */
+    max-width: 800px; /* Restricts paragraph width for better readability */
+    margin: 0 auto;
+    animation: fadeInUp 2.5s ease-out;
+}
 
-        #home p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
+/* Overlay Effect */
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Slightly darker for better text contrast */
+    z-index: 1;
+    animation: shadowMove 15s ease-in-out infinite; /* Moving shadow animation */
+}
+
+#home h1, #home p {
+    position: relative;
+    z-index: 2;
+}
+
+/* Smooth Fade-In Animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Moving Shadow Animation */
+@keyframes shadowMove {
+    0% {
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    #home h1 {
+        font-size: 3rem;
+    }
+    #home p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #home h1 {
+        font-size: 2.5rem;
+    }
+    #home p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    #home h1 {
+        font-size: 2rem;
+    }
+    #home p {
+        font-size: 0.9rem;
+    }
+}
+
 
         /* About Section */
         #about {
@@ -200,6 +299,44 @@
             padding-bottom: 5px;
         }
 
+        /* Experience Section */
+        #experience {
+            background: #f9f9f9;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        #experience .section-content {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .experience-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            max-width: 300px;
+            text-align: left;
+        }
+
+        .experience-card:hover {
+            transform: scale(1.05);
+        }
+
+        .experience-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .experience-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
         /* Education and Certifications */
         .section-content .card {
             background: #f9f9f9;
@@ -222,6 +359,33 @@
         .section-content .card p {
             font-size: 1rem;
             color: #555;
+        }
+
+        /* Skills and Tools Section */
+        #skills, #tools {
+            text-align: center;
+            background: #f0f0f0;
+        }
+
+        #skills .section-content, #tools .section-content {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .gradient-card {
+            background: linear-gradient(135deg, #8e44ad, #3498db);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px;
+            color: white;
+            text-align: center;
+            transition: transform 0.3s ease;
+            width: 200px;
+        }
+
+        .gradient-card:hover {
+            transform: scale(1.1);
         }
 
         /* Footer */
@@ -281,6 +445,57 @@
                 font-size: 0.9rem;
             }
         }
+
+
+
+
+          /* Projects Section Styling */
+    #projects {
+        background: #f4f4f4;
+        padding: 50px 0;
+    }
+
+    #projects .section-content {
+        text-align: center;
+    }
+
+    .project-card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+        max-width: 800px;
+        text-align: left;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-card h3 {
+        font-size: 1.75rem;
+        margin-bottom: 15px;
+        color: #3498db;
+    }
+
+    .project-card p {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 10px;
+    }
+
+    .project-card a {
+        color: #3498db;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .project-card a:hover {
+        text-decoration: underline;
+    }
     </style>
 </head>
 <body>
@@ -290,9 +505,10 @@
         <div class="loader"></div>
     </div>
 
+    <!-- Header -->
     <header>
         <div class="container">
-            <div class="menu-toggle" id="menu-toggle">
+            <div class="menu-toggle">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -301,6 +517,7 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#skills">Skills</a></li>
@@ -311,25 +528,44 @@
         </div>
     </header>
 
+    <!-- Home Section -->
     <section id="home">
         <div class="container">
-            <h1>Welcome to My Portfolio</h1>
-            <p>Hi, I'm Arjun. I'm passionate about cybersecurity and dedicated to enhancing digital security.</p>
+            <h1>Welcome to My Digital Space</h1>
+            <p>I’m Arjun, a Cyber Security Specialist with a Forensic Science background. Dive into my portfolio to discover how I can help safeguard your digital world and solve complex security challenges.</p>
         </div>
     </section>
+    
 
+    <!-- About Section -->
     <section id="about">
         <div class="container">
             <div class="profile-pic">
-                <img src="https://drive.google.com/file/d/1lCMHzm-gvABQRJrlnyKEyK3K3vbYiuHR/view?usp=drivesdk" alt="Profile Picture">
+                <img src="path-to-your-profile-picture.jpg" alt="Arjun's Profile Picture">
             </div>
             <div class="section-content">
                 <h2>About Me</h2>
-                <p>Hi, I'm Arjun. I have a BSc in Forensic Science, an MSc in Cyber Security, and certifications in Ethical Hacking. I’m passionate about cybersecurity and excel at solving complex problems.</p>
+                <p>Hello! I'm Arjun, a Forensic Science graduate with an MSc in Cyber Security. I'm passionate about cybersecurity and solving complex problems to enhance digital security.</p>
             </div>
         </div>
     </section>
 
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-content">
+                <h2>Experience</h2>
+                <div class="experience-card">
+                    <h3>Cyber Security Intern</h3>
+                    <p>Trinity Technologies</p>
+                    <p>Worked on various cybersecurity projects, assisting in threat detection and incident response.</p>
+                </div>
+                <!-- Add more experience cards here if needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
     <section id="education">
         <div class="container">
             <div class="section-content">
@@ -346,6 +582,7 @@
         </div>
     </section>
 
+    <!-- Certifications Section -->
     <section id="certifications">
         <div class="container">
             <div class="section-content">
@@ -384,74 +621,64 @@
         </div>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills">
         <div class="container">
             <div class="section-content">
                 <h2>Skills</h2>
-                <div class="card">
-                    <h3>Problem-solving</h3>
-                    <p>Excellent at diagnosing and resolving complex issues in cybersecurity.</p>
-                </div>
-                <div class="card">
-                    <h3>PowerShell</h3>
-                    <p>Proficient in scripting and automating tasks using PowerShell.</p>
-                </div>
-                <div class="card">
-                    <h3>HTML/CSS</h3>
-                    <p>Skilled in creating and styling web pages using HTML and CSS.</p>
-                </div>
-                <div class="card">
-                    <h3>JavaScript</h3>
-                    <p>Experienced in using JavaScript for interactive web elements.</p>
-                </div>
-                <div class="card">
-                    <h3>MySQL</h3>
-                    <p>Knowledgeable in managing databases using MySQL.</p>
-                </div>
+                <div class="gradient-card">PowerShell</div>
+                <div class="gradient-card">Bash Scripting</div>
+                <div class="gradient-card">Cybersecurity</div>
+                <!-- Add more skills here if needed -->
             </div>
         </div>
     </section>
 
+    <!-- Tools Section -->
     <section id="tools">
         <div class="container">
             <div class="section-content">
                 <h2>Tools</h2>
-                <div class="card">
-                    <h3>..</h3>
-                    <p>..</p>
-                </div>
+                <div class="gradient-card">Windows Security Health Check Script</div>
+                <!-- Add more tools here if needed -->
             </div>
         </div>
     </section>
 
-    <section id="projects">
-        <div class="container">
-            <div class="section-content">
-                <h2>Projects</h2>
-                <div class="card">
-                    <h3>Windows Security Health Check Script</h3>
-                    <p>A PowerShell script designed to evaluate the security posture of Windows systems.</p>
-                </div>
+    
+ <!-- Projects Section -->
+<section id="projects">
+    <div class="container">
+        <div class="section-content">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3>Windows Security Health Check Script</h3>
+                <p><strong>Description:</strong> Developed a PowerShell script to perform a comprehensive security health check on Windows systems. The script automates the collection of system information, checks for common vulnerabilities, and generates a detailed report.</p>
+                <p><strong>Technologies:</strong> PowerShell, Windows Security</p>
+                <p><strong>Link:</strong> <a href="https://github.com/A-rjun-saji/Windows-Security-Health-Check-Script" target="_blank">GitHub Repository</a></p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
+
+    <!-- Footer -->
     <footer>
-        <p>Connect with me on <a href="https://www.linkedin.com/in/your-linkedin-id" target="_blank">LinkedIn</a> and check out my <a href="https://github.com/A-rjun-saji" target="_blank">GitHub</a></p>
+        <p>LinkedIn: <a href="your-linkedin-profile-link" target="_blank">Your LinkedIn</a></p>
+        <p>GitHub: <a href="https://github.com/A-rjun-saji" target="_blank">A-rjun-saji</a></p>
     </footer>
 
+    <!-- JavaScript -->
     <script>
         // JavaScript for menu toggle
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            var navMenu = document.querySelector('.nav ul');
-            navMenu.classList.toggle('active');
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav ul').classList.toggle('active');
         });
 
-        // Hide preloader once content is loaded
+        // Preloader
         window.addEventListener('load', function() {
             document.getElementById('preloader').style.display = 'none';
         });
     </script>
-
 </body>
 </html>
